@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3ok6udbgqog8"]
+
+[ext_resource type="PackedScene" uid="uid://cst3wwng5by2n" path="res://characters/player.tscn" id="1_wpdms"]
+[ext_resource type="PackedScene" uid="uid://ch3btgqy1lwad" path="res://objects/pot.tscn" id="2_bexlo"]
+
+[node name="GameLevel" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_wpdms")]
+position = Vector2(73, 55)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(73, 55)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="pot" parent="." instance=ExtResource("2_bexlo")]
+position = Vector2(124, 70)
+
+[node name="pot2" parent="." instance=ExtResource("2_bexlo")]
+position = Vector2(185, 99)
+
+[node name="pot3" parent="." instance=ExtResource("2_bexlo")]
+position = Vector2(215, 53)
