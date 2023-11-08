@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cst3wwng5by2n"]
+[gd_scene load_steps=23 format=3 uid="uid://cst3wwng5by2n"]
 
 [ext_resource type="Texture2D" uid="uid://bnxsud3k34pua" path="res://assets/player/spr_player_front_idle_shadowless.png" id="1_cdi6v"]
 [ext_resource type="Texture2D" uid="uid://c4al52bmpkx6c" path="res://assets/player/spr_player_back_idle_shadowless.png" id="2_phcyx"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dk1ebcqk2y71a" path="res://assets/player/spr_player_right_walk_shadowless.png" id="6_anuoj"]
 [ext_resource type="Texture2D" uid="uid://c423kqnu4d1dv" path="res://assets/player/spr_player_left_walk_shadowless.png" id="7_cli6u"]
 [ext_resource type="Texture2D" uid="uid://dqc4k4firq68u" path="res://assets/player/spr_player_back_walk_shadowless.png" id="8_pa2in"]
+[ext_resource type="Texture2D" uid="uid://bbau76ev5eqbw" path="res://assets/player/spr_player_front_attack_shadowless.png" id="9_aqb03"]
+[ext_resource type="Texture2D" uid="uid://dvloug01h7ks4" path="res://assets/items/sword1.png" id="10_dv1uy"]
 
 [sub_resource type="Animation" id="Animation_pb7tp"]
 length = 0.001
@@ -46,6 +48,42 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [12]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HandEquip/EquipSprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HandEquip/EquipSprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-17, -7)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HandEquip/EquipSprite:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_tbal7"]
@@ -212,6 +250,47 @@ tracks/2/keys = {
 "values": [12]
 }
 
+[sub_resource type="Animation" id="Animation_8vyel"]
+resource_name = "walk_back"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_pa2in")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
 [sub_resource type="Animation" id="Animation_rksk8"]
 resource_name = "walk_front"
 length = 0.6
@@ -239,47 +318,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("5_3emrr")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body:hframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-
-[sub_resource type="Animation" id="Animation_qes7n"]
-resource_name = "walk_right"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("6_anuoj")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -335,8 +373,8 @@ tracks/2/keys = {
 "values": [6]
 }
 
-[sub_resource type="Animation" id="Animation_8vyel"]
-resource_name = "walk_back"
+[sub_resource type="Animation" id="Animation_qes7n"]
+resource_name = "walk_right"
 length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
@@ -361,7 +399,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("8_pa2in")]
+"values": [ExtResource("6_anuoj")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -376,9 +414,86 @@ tracks/2/keys = {
 "values": [6]
 }
 
+[sub_resource type="Animation" id="Animation_ju3y4"]
+resource_name = "attack_front"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_aqb03")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HandEquip/EquipSprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HandEquip/EquipSprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-17, -7), Vector2(11, 20), Vector2(12, 20), Vector2(5, 20), Vector2(-10, 20), Vector2(-13, 16), Vector2(-15, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HandEquip/EquipSprite:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, -3.14159, -3.14159, -3.14159, -1.87797, -1.5708, 0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_etuih"]
 _data = {
 "RESET": SubResource("Animation_pb7tp"),
+"attack_front": SubResource("Animation_ju3y4"),
 "idle_back": SubResource("Animation_tbal7"),
 "idle_front": SubResource("Animation_12k50"),
 "idle_left": SubResource("Animation_0gjqh"),
@@ -388,6 +503,10 @@ _data = {
 "walk_left": SubResource("Animation_3j2l8"),
 "walk_right": SubResource("Animation_qes7n")
 }
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n42g0"]
+radius = 2.2037
+height = 12.8769
 
 [node name="Player" type="CharacterBody2D"]
 
@@ -399,3 +518,17 @@ hframes = 12
 libraries = {
 "": SubResource("AnimationLibrary_etuih")
 }
+
+[node name="HandEquip" type="Node2D" parent="."]
+
+[node name="EquipSprite" type="Sprite2D" parent="HandEquip"]
+position = Vector2(-17, -7)
+texture = ExtResource("10_dv1uy")
+
+[node name="Area2D" type="Area2D" parent="HandEquip/EquipSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HandEquip/EquipSprite/Area2D"]
+visible = false
+position = Vector2(-3.5, -3.5)
+rotation = -0.785398
+shape = SubResource("CapsuleShape2D_n42g0")
